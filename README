@@ -1,3 +1,16 @@
 Run below command  to bring assignment_final vm 
 
 #vagrant up
+
+1.Run below in browser on host machine
+http://localhost:8080/app which will redirect to https://localhost:8843/app
+
+I used apache Redirectcond and Redirect rule to redirect 80 to 8443 so, at host it can redirect to 8443 
+
+2.there is cron installed on assignment_final vm which is python script which adds variable to memcached every minute (memcached_getter_setter_cron.py)
+memcached_getter_setter.py is memached variable intialization script. Which is put in rc.local for auto intialize variable after boot and cron can set variablesbased on it
+
+3.flask python script running in background and its also put in /etc/rc.local to start automatic at boot time
+
+4.There was problem with pip install pyopenssl,flask and python-memcached. It was giving error of ssl. so I add --index-url=https://pypi.python.org/simple/ to pip install to solve issue.
+ 
