@@ -8,7 +8,7 @@ http://localhost:8080/app which will redirect to https://localhost:8843/app
 I used apache Redirectcond and Redirect rule to redirect 80 to 8443 so, at host it can redirect to 8443 
 
 2.there is cron installed on assignment_final vm which is python script which adds variable to memcached every minute (memcached_getter_setter_cron.py)
-memcached_getter_setter.py is memached variable intialization script. Which is put in rc.local for auto intialize variable after boot and cron can set variablesbased on it
+memcached_getter_setter.py is memached variable intialization script. Which is put in rc.local for auto intialize variable after boot so, cron script can set variables based on it
 
 3.flask python script (flask_memcached_test_final.py) running in background and its also put in /etc/rc.local to start automatic at boot time. This script is running microservice to give statics of memcached
 
